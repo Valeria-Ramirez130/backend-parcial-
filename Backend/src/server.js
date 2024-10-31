@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import cors from 'cors';
 import routerUsuarios from './rutas/usuario.js'; // Asegúrate de que la ruta sea correcta
 import codesRouter from './rutas/codigo.js'; // Asegúrate de que la ruta sea correcta
+import adminRouter from './rutas/admin.js'
 
 // Cargar las variables de entorno desde el archivo .env
 config();
@@ -17,6 +18,7 @@ app.use(json()); // Parsear JSON antes de las rutas
 // Rutas de la API
 app.use('/api/usuario', routerUsuarios); // Rutas para usuarios
 app.use('/api/codigos', codesRouter); // Rutas para códigos
+app.use('/api/admin', adminRouter);
 
 // Ruta de inicio
 app.get('/', (req, res) => {
